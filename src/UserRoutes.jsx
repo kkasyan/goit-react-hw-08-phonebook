@@ -1,7 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 
-import { SharedLayout } from './components/SharedLayout/SharedLayout';
+import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
+import PublicRoute from 'components/PublicRoute/PublicRoute';
+// import { SharedLayout } from './components/SharedLayout/SharedLayout';
 
 const Login = lazy(() => import('./pages/Login/Login'));
 const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
@@ -13,11 +15,16 @@ const UserRoutes = () => {
     <>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/" element={<SharedLayout />}></Route>
-          <Route path="/register" element={<Register />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/contacts" element={<Contacts />}></Route>
+          {/* <Route path="/" element={<SharedLayout />}> */}
+          <Route element={<PublicRoute />}>
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+          </Route>
+          <Route element={<PrivateRoute />}>
+            <Route path="/contacts" element={<Contacts />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
+          {/* </Route> */}
         </Routes>
       </Suspense>
     </>

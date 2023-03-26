@@ -5,8 +5,8 @@ import { memo } from 'react';
 import { FormButton } from 'components/shared/FormButton/FormButton';
 
 const ContactForm = ({ onSubmit }) => {
-  const [state, setState] = useState({ name: '', phone: '' });
-  const { name, phone } = state;
+  const [state, setState] = useState({ name: '', number: '' });
+  const { name, number } = state;
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -26,7 +26,7 @@ const ContactForm = ({ onSubmit }) => {
   const reset = () => {
     setState({
       name: '',
-      phone: '',
+      number: '',
     });
   };
 
@@ -40,18 +40,18 @@ const ContactForm = ({ onSubmit }) => {
           onChange={handleChange}
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          required
+          // required
         />
       </label>
       <label htmlFor="number">
         Number
         <input
-          name="phone"
-          value={phone}
+          name="number"
+          value={number}
           onChange={handleChange}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          required
+          // required
         />
       </label>
       <FormButton type="submit" text="Add contact" />
