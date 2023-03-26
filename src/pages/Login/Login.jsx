@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
 
 import { signIn } from 'redux/auth/operations';
 import { getAuthError } from 'redux/auth/selectors';

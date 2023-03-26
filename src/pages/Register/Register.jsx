@@ -2,7 +2,6 @@ import RegisterForm from 'components/RegisterForm/RegisterForm';
 import { signUp } from 'redux/auth/operations';
 import { getAuthError } from 'redux/auth/selectors';
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
 
 const Register = () => {
   const dispatch = useDispatch();
