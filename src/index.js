@@ -1,21 +1,26 @@
 import React from 'react';
-import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import ReactDOM from 'react-dom/client';
+
+import { Provider } from 'react-redux';
 import { store, persistor } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
-import ReactDOM from 'react-dom/client';
-import { App } from 'components/App';
+
+import { App } from 'components/App/App';
+import Navigation from 'components/Menus/Navigation/Navigation';
+
 import { ChakraProvider } from '@chakra-ui/react';
 import { theme } from './components/shared/theme';
-import Navigation from 'components/Navigation/Navigation';
-import './index.css';
+
+import '@fontsource/great-vibes';
+import '@fontsource/nunito';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <BrowserRouter>
+          <BrowserRouter basename="/goit-react-hw-08-phonebook">
             <Navigation />
             <App />
           </BrowserRouter>

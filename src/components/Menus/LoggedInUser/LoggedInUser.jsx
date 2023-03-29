@@ -1,6 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
+
 import { logOut } from 'redux/auth/operations';
 import { getUser } from 'redux/auth/selectors';
+
+import { Text, Box, Button } from '@chakra-ui/react';
 
 const LoggedInUser = () => {
   const { name } = useSelector(getUser);
@@ -9,12 +12,14 @@ const LoggedInUser = () => {
   const onLogOut = () => dispatch(logOut());
 
   return (
-    <>
-      <p>{name}</p>
-      <button type="button" onClick={onLogOut}>
-        Logout
-      </button>
-    </>
+    <Box display="flex" alignItems="center">
+      <Text fontSize="lg" mr="5px">
+        {name} |
+      </Text>
+      <Button type="button" onClick={onLogOut}>
+        <Text fontSize="lg">Logout</Text>
+      </Button>
+    </Box>
   );
 };
 

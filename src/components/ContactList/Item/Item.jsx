@@ -1,16 +1,28 @@
-import css from './item.module.css';
 import PropTypes from 'prop-types';
 import { memo } from 'react';
 
 import { FormButton } from 'components/shared/FormButton/FormButton';
 
+import { Text, ListItem, Box } from '@chakra-ui/react';
+
 const Item = ({ contact: { name, number, id }, removeContact }) => {
   return (
-    <li className={css.item}>
-      <p className={css.contactItem}>{name}</p>
-      <p className={css.contactItem}>{number}</p>
+    <ListItem
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
+      p="2px"
+    >
+      <Box display="flex">
+        <Text mr="7px" color="white">
+          {name}
+        </Text>
+        <Text mr="10px" color="white">
+          {number}
+        </Text>
+      </Box>
       <FormButton onRemove={() => removeContact(id)} text="Delete" />
-    </li>
+    </ListItem>
   );
 };
 

@@ -1,7 +1,11 @@
-import RegisterForm from 'components/RegisterForm/RegisterForm';
+import RegisterForm from 'components/Forms/RegisterForm/RegisterForm';
+
 import { signUp } from 'redux/auth/operations';
 import { getAuthError } from 'redux/auth/selectors';
+
 import { useDispatch, useSelector } from 'react-redux';
+
+import { Text } from '@chakra-ui/react';
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -12,11 +16,12 @@ const Register = () => {
   };
 
   return (
-    <div>
-      Register
+    <>
       <RegisterForm onSubmit={onRegister} />
-      {status && <p>{message}</p>}
-    </div>
+      {status && (
+        <Text textAlign="center">Your problem is: you are {message}!</Text>
+      )}
+    </>
   );
 };
 

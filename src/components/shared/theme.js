@@ -1,10 +1,8 @@
-import { extendBaseTheme } from '@chakra-ui/react';
-import chakraTheme from '@chakra-ui/theme';
+import { extendTheme } from '@chakra-ui/react';
 
-const { Button } = chakraTheme.components;
-
-export const theme = extendBaseTheme({
-  components: {
-    Button,
+export const theme = extendTheme({
+  fonts: {
+    heading: `'Great Vibes', sans-serif`,
+    body: `'Nunito', sans-serif`,
   },
 });

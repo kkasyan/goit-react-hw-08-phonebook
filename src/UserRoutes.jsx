@@ -1,9 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 
-import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
-import PublicRoute from 'components/PublicRoute/PublicRoute';
-// import { SharedLayout } from './components/SharedLayout/SharedLayout';
+import PrivateRoute from 'components/Routes/PrivateRoute/PrivateRoute';
+import PublicRoute from 'components/Routes/PublicRoute/PublicRoute';
+
+import { Loader } from 'components/shared/Loader/Loader';
 
 const Login = lazy(() => import('./pages/Login/Login'));
 const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
@@ -13,9 +14,8 @@ const Contacts = lazy(() => import('./pages/Contacts/Contacts'));
 const UserRoutes = () => {
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <Routes>
-          {/* <Route path="/" element={<SharedLayout />}> */}
           <Route element={<PublicRoute />}>
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
@@ -24,7 +24,6 @@ const UserRoutes = () => {
             <Route path="/contacts" element={<Contacts />} />
           </Route>
           <Route path="*" element={<NotFound />} />
-          {/* </Route> */}
         </Routes>
       </Suspense>
     </>

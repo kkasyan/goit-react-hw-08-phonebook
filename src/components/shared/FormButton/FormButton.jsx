@@ -1,9 +1,9 @@
-import css from './formButton.module.css';
+import { Button } from '@chakra-ui/react';
 
 export const FormButton = ({ text, type, onRemove }) => {
   return (
-    <button onClick={onRemove} className={css.btn} type={type}>
+    <Button onClick={onRemove} type={type}>
       {text}
-    </button>
+    </Button>
   );
 };

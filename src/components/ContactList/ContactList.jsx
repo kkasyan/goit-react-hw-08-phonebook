@@ -1,7 +1,6 @@
-import css from './contactList.module.css';
 import PropTypes from 'prop-types';
-
 import Item from './Item/Item';
+import { UnorderedList } from '@chakra-ui/react';
 
 export const ContactList = ({ items, removeContact }) => {
   const elements = items.map(item => (
@@ -9,7 +8,9 @@ export const ContactList = ({ items, removeContact }) => {
   ));
   return (
     <>
-      <ul className={css.list}>{elements}</ul>
+      <UnorderedList maxWidth="400px" p="15px">
+        {elements}
+      </UnorderedList>
     </>
   );
 };
