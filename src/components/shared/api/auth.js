@@ -29,7 +29,7 @@ export const getCurrentUser = async token => {
     return data;
   } catch (error) {
     instance.defaults.headers.common.authorization = '';
-    throw error;
+    return error;
   }
 };
 
