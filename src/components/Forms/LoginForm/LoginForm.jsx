@@ -69,6 +69,7 @@ const LoginForm = ({ onSubmit }) => {
               onChange={handleChange}
               pattern=".{7,}"
               required
+              autoComplete="true"
               focusBorderColor="pink.400"
             />
           </InputGroup>

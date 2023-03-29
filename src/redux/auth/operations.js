@@ -69,7 +69,7 @@ export const getCurrent = createAsyncThunk(
         status: response.status,
         message: response.statusText,
       };
-      console.log(error);
+      // console.log(error);
       return rejectWithValue(error);
     }
   }

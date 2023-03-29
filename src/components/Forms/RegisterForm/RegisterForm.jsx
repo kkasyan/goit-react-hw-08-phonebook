@@ -80,6 +80,7 @@ const RegisterForm = ({ onSubmit }) => {
               onChange={handleChange}
               pattern=".{7,}"
               title="Seven or more characters"
+              autoComplete="true"
               required
             />
           </InputGroup>
