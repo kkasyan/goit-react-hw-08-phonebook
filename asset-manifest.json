@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.894d0428.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.2747db54.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.d27d7ffb.js",
     "static/js/464.f7bc2613.chunk.js": "/goit-react-hw-08-phonebook/static/js/464.f7bc2613.chunk.js",
     "static/js/95.c2eea9e9.chunk.js": "/goit-react-hw-08-phonebook/static/js/95.c2eea9e9.chunk.js",
     "static/js/345.49e5ec68.chunk.js": "/goit-react-hw-08-phonebook/static/js/345.49e5ec68.chunk.js",
@@ -19,7 +19,7 @@
     "static/media/nunito-vietnamese-400-normal.woff2": "/goit-react-hw-08-phonebook/static/media/nunito-vietnamese-400-normal.6a8bc7acd205391fb71a.woff2",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.894d0428.css.map": "/goit-react-hw-08-phonebook/static/css/main.894d0428.css.map",
-    "main.2747db54.js.map": "/goit-react-hw-08-phonebook/static/js/main.2747db54.js.map",
+    "main.d27d7ffb.js.map": "/goit-react-hw-08-phonebook/static/js/main.d27d7ffb.js.map",
     "464.f7bc2613.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/464.f7bc2613.chunk.js.map",
     "95.c2eea9e9.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/95.c2eea9e9.chunk.js.map",
     "345.49e5ec68.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/345.49e5ec68.chunk.js.map",
@@ -28,6 +28,6 @@
   },
   "entrypoints": [
     "static/css/main.894d0428.css",
-    "static/js/main.2747db54.js"
+    "static/js/main.d27d7ffb.js"
   ]
 }
