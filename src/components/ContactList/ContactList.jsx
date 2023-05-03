@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
 import Item from './Item/Item';
 import { UnorderedList } from '@chakra-ui/react';
+import { useSelector } from 'react-redux';
+import { getFilteredContacts } from 'redux/contacts/selectors';
 
-export const ContactList = ({ items, removeContact }) => {
-  const elements = items.map(item => (
-    <Item key={item.id} removeContact={removeContact} contact={item} />
-  ));
+export const ContactList = ({ items }) => {
+  const contacts = useSelector(getFilteredContacts);
+
+  const elements = contacts.map(item => <Item key={item.id} contact={item} />);
   return (
     <>
       <UnorderedList maxWidth="400px" p="15px">

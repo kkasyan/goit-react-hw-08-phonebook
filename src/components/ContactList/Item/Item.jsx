@@ -1,11 +1,19 @@
 import PropTypes from 'prop-types';
 import { memo } from 'react';
+import { useDispatch } from 'react-redux';
+import { removeContact } from 'redux/contacts/operations';
 
 import { FormButton } from 'components/shared/FormButton/FormButton';
 
 import { Text, ListItem, Box } from '@chakra-ui/react';
 
-const Item = ({ contact: { name, number, id }, removeContact }) => {
+const Item = ({ contact: { name, number, id } }) => {
+  const dispatch = useDispatch();
+
+  const onRemoveContact = id => {
+    dispatch(removeContact(id));
+  };
+
   return (
     <ListItem
       display="flex"
@@ -21,7 +29,7 @@ const Item = ({ contact: { name, number, id }, removeContact }) => {
           {number}
         </Text>
       </Box>
-      <FormButton onRemove={() => removeContact(id)} text="Delete" />
+      <FormButton onRemove={() => onRemoveContact(id)} text="Delete" />
     </ListItem>
   );
 };

@@ -1,9 +1,19 @@
 import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import { setFilter } from 'redux/filter/slice';
+import { getFilter } from 'redux/filter/selectors';
 
 import { Input, InputGroup, InputLeftElement, Icon } from '@chakra-ui/react';
 import { BsSearchHeart } from 'react-icons/bs';
 
-export const Filter = ({ value, onChange }) => {
+export const Filter = () => {
+  const filter = useSelector(getFilter);
+  const dispatch = useDispatch();
+
+  const onSetFilter = ({ target }) => {
+    dispatch(setFilter(target.value));
+  };
+
   return (
     <InputGroup size="lg">
       <InputLeftElement
@@ -12,8 +22,8 @@ export const Filter = ({ value, onChange }) => {
       />
       <Input
         type="text"
-        value={value}
-        onChange={onChange}
+        value={filter}
+        onChange={onSetFilter}
         placeholder="Find contacts by name"
         focusBorderColor="pink.400"
         bg="white"
